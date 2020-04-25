@@ -289,6 +289,9 @@ body {
   background: #ffffff;
   font-size: 0.875rem; }
 
+img {
+  max-width: 100%; }
+
 h1,
 h2,
 p {
@@ -299,21 +302,178 @@ h1 {
   color: #03afc2;
   line-height: 1;
   font-size: 3.125rem; }
-  h1 span {
-    display: block;
-    font-size: 5.5rem;
-    letter-spacing: 0.3em;
-    color: #606060;
-    text-transform: uppercase;
-    line-height: 1;
-    font-family: "Six Caps", sans-serif; }
 
 h2 {
   font-size: 2rem;
-  letter-spacing: 0.3em;
+  letter-spacing: 0.15em;
   color: #606060;
   text-transform: uppercase;
   line-height: 1;
-  font-family: "Six Caps", sans-serif; }
+  font-family: "Six Caps", sans-serif;
+  font-weight: 400; }
+
+.welcome {
+  background-image: url(../../img/header-bg.png);
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+  .welcome h1 {
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: #606060;
+    line-height: 2;
+    text-align: center; }
+    .welcome h1 span {
+      display: block;
+      font-size: 5.5rem;
+      letter-spacing: 0.15em;
+      color: #3a93c0;
+      text-transform: uppercase;
+      line-height: 1;
+      font-family: "Six Caps", sans-serif;
+      font-weight: 400; }
+    .welcome h1::before, .welcome h1::after {
+      content: "";
+      display: block;
+      margin: 0 auto;
+      width: 80%;
+      height: 1px;
+      background: #3a93c0; }
+    .welcome h1::before {
+      margin: 0 auto 2em; }
+    .welcome h1::after {
+      margin: 2em auto 0; }
+
+.intro {
+  display: flex;
+  color: rgba(255, 255, 255, 0.7); }
+  .intro h2 {
+    color: #ffffff; }
+    .intro h2::after {
+      content: "";
+      display: block;
+      width: 20%;
+      height: 1px;
+      background: rgba(255, 255, 255, 0.5);
+      display: block;
+      margin: 1em auto 0; }
+  @supports (display: grid) {
+    .intro {
+      display: grid;
+      grid-template-columns: minmax(4em, 1fr) minmax(auto, 30em) minmax(4em, 1fr); } }
+
+.intro-middle {
+  background: #031e2b;
+  padding: 2.5em 5vw;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; }
+
+.intro-left img,
+.intro-right img {
+  object-fit: cover;
+  min-height: 100%;
+  min-width: 100%;
+  display: block; }
+
+.about-me {
+  width: 90%;
+  margin: 0 auto;
+  max-width: 50em;
+  margin-top: 5em;
+  margin-bottom: 5em; }
+
+.about-title {
+  margin-bottom: 0.25em; }
+
+.about-subtitle {
+  margin: 0.5em 0; }
+
+@supports (display: grid) {
+  .about-me {
+    display: grid;
+    grid-template-columns: [port-start] minmax(6em, 1fr) [name-start] minmax(6em, 1fr) [img-end] 2fr [port-end]; }
+  .about-img {
+    grid-column: port-start / img-end;
+    grid-row: 1 / 2; }
+  .about-title {
+    grid-column: name-start / port-end;
+    grid-row: 1 / 2;
+    align-self: end; }
+  .about-subtitle,
+  .about-text {
+    grid-column: port-start / port-end; } }
+
+.portfolio {
+  text-align: center;
+  background: #e8e9eb;
+  padding: 5em 0; }
+
+.portfolio-items {
+  display: flex;
+  flex-wrap: wrap;
+  width: 90%;
+  margin: 0 auto;
+  max-width: 75em; }
+
+.portfolio-item {
+  position: relative;
+  overflow: hidden;
+  flex: 1 1 10rem;
+  margin: 0; }
+  .portfolio-item img {
+    display: block;
+    width: 100%; }
+  .portfolio-item figcaption {
+    position: absolute;
+    top: 100%;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 2em;
+    background: rgba(3, 175, 194, 0.75);
+    color: #ffffff;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    transition: top ease-in-out 250ms; }
+    .portfolio-item figcaption .portfolio-title {
+      color: white;
+      font-size: 2rem;
+      margin-bottom: auto; }
+      .featured .portfolio-item figcaption .portfolio-title {
+        font-size: 4rem; }
+    .portfolio-item figcaption .portfolio-desc {
+      display: none; }
+      .featured .portfolio-item figcaption .portfolio-desc {
+        display: block; }
+    .portfolio-item figcaption .portfolio-link {
+      color: white;
+      font-weight: 900;
+      font-size: 1.1rem;
+      text-decoration: none;
+      border-bottom: 3px solid #ffffff;
+      align-self: flex-start; }
+      .portfolio-item figcaption .portfolio-link:after {
+        content: url(../../img/arrow.svg);
+        display: inline-block;
+        height: 0.8em;
+        width: 0.8em;
+        margin-left: 0.5em; }
+  .portfolio-item:hover figcaption,
+  .portfolio-item:focus figcaption {
+    top: 0; }
+
+@supports (display: grid) {
+  .portfolio-items {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); }
+    .portfolio-items .portfolio-item.featured {
+      grid-column: 1 / span 2;
+      grid-row: 1 / span 2; } }
 
 /*# sourceMappingURL=main.css.map */

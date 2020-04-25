@@ -5,7 +5,9 @@ body {
   background: $white;
   font-size: 0.875rem;
 }
-
+img {
+  max-width: 100%;
+}
 h1,
 h2,
 p {
@@ -16,15 +18,8 @@ h1 {
   color: $accent;
   line-height: 1;
   font-size: 3.125rem;
-  span {
-    display: block;
-    @include sans-serif(5.5rem);
-  }
 }
 
 h2 {
   @include sans-serif($fs: 2rem);
-}
-
-p {
 }

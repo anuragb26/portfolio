@@ -22,6 +22,9 @@
   .about-img {
     grid-column: port-start / img-end;
     grid-row: 1 / 2;
+    @include mq() {
+      grid-row: 1 / 4;
+    }
   }
   .about-title {
     grid-column: name-start / port-end;
@@ -31,5 +34,8 @@
   .about-subtitle,
   .about-text {
     grid-column: port-start / port-end;
+    @include mq() {
+      grid-column: img-end / port-end;
+    }
   }
 }

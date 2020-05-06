@@ -586,12 +586,15 @@ nav {
 .portfolio-header {
   text-align: left;
   padding: 5em 0;
-  margin-bottom: 2em; }
-
-.portfolio-header:nth-of-type(1) {
-  background-image: url(../img/portfolio-01.jpg);
+  margin-bottom: 2em;
   background-size: cover;
   background-position: center; }
+
+.header-one {
+  background-image: url(../img/portfolio-01.jpg); }
+
+.header-two {
+  background-image: url(../img/portfolio-02.jpg); }
 
 .portfolio-title-box {
   background-color: rgba(3, 175, 194, 0.75);
@@ -648,6 +651,18 @@ nav {
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
   padding: 4px 0 0;
   cursor: pointer; }
+
+@keyframes modalIn {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+
+@keyframes modalOut {
+  0% {
+    opacity: 1; }
+  100% {
+    opacity: 0; } }
 
 .contact {
   width: 90%;
